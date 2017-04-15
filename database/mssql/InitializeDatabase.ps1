@@ -15,7 +15,7 @@ if ($sa_password -ne "_") {
     Invoke-Sqlcmd -Query $sqlcmd -ServerInstance ".\SQLEXPRESS" 
 }
  
-Invoke-Sqlcmd -InputFile C:\init\Docker.AtSea.Database_Create.sql -Verbose
+Invoke-Sqlcmd -InputFile C:\init\init-db.sql -Verbose
 
 # TODO - use ServiceMonitor.exe when it gets open-sourced (https://github.com/Microsoft/iis-docker/issues/1)
 Write-Verbose "Started SQL Server."
