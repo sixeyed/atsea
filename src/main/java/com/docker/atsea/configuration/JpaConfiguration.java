@@ -55,7 +55,7 @@ public class JpaConfiguration {
 
 		// From http://stackoverflow.com/questions/4716503/reading-a-plain-text-file-in-java
 		// Set password to connect to postgres using Docker secrets.
-		try(BufferedReader br = new BufferedReader(new FileReader("/run/secrets/postgres_password"))) {
+		try(BufferedReader br = new BufferedReader(new FileReader("/run/secrets/database_password"))) {
 			StringBuilder sb = new StringBuilder();
 			String line = br.readLine();
 
@@ -66,7 +66,7 @@ public class JpaConfiguration {
 			}
 			dataSourceProperties.setDataPassword(sb.toString());
 		} catch (IOException e) {
-			System.err.println("Could not successfully load DB password file");
+			System.err.println("Failed to load DB password:" + e.getMessage());
 		}
 
 		return dataSourceProperties;

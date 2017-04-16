@@ -1,0 +1,52 @@
+version: "3.2"
+
+services:
+
+  database:
+    image: sixeyed/atseadb:mssql
+    ports:
+      - mode: host
+        target: 1433
+        published: 1433
+    networks:
+     - atsea
+    deploy:
+      endpoint_mode: dnsrr
+      placement:
+        constraints:
+          - 'node.labels.os == windows'
+
+  appserver:
+    image: sixeyed/atsea-app:mssql
+    ports:
+      - mode: host
+        target: 8080
+        published: 80
+    networks:
+      - atsea
+    deploy:
+      endpoint_mode: dnsrr
+      placement:
+        constraints:
+          - 'node.labels.os == linux'
+    secrets:
+      - database_password
+
+  payment_gateway:
+    image: dockersamples/atseapayment
+    secrets:
+      - payment_token
+    deploy:
+      endpoint_mode: dnsrr
+      placement:
+        constraints:
+          - 'node.labels.os == linux'
+
+networks:
+  atsea:
+
+secrets:
+  database_password:
+    external: true
+  payment_token:
+    external: true
