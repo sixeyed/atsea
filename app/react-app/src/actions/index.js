@@ -8,9 +8,8 @@ const receiveProducts = products => ({
   products: products
 })
 
-const BASE_URL = '/atsea'
-const API = `${BASE_URL}/api`
-const UTILITY = `${BASE_URL}/utility`
+const API = '/api'
+const UTILITY = '/utility'
 
 export const createOrder = (values) => (dispatch) => {
   const url = `${API}/order/`
@@ -51,7 +50,7 @@ export const purchaseOrder = () => (dispatch) => {
     payload: {
       promise:
         request
-          .get(`${BASE_URL}/purchase/`)
+          .get('/purchase/')
           .set('Authorization', 'Bearer ' + token)
           .accept('application/json')
           .end()
@@ -135,7 +134,7 @@ export const loginCustomer = (username, password) => (dispatch) => {
     payload: {
       promise:
         request
-          .post(`${BASE_URL}/login/`)
+          .post('/login/')
           .set('Content-Type', 'application/json')
           .accept('application/json')
           .send(

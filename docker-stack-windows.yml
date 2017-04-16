@@ -3,7 +3,7 @@ version: "3.2"
 services:
 
   database:
-    image: sixeyed/atseadb:mssql
+    image: sixeyed/atsea-db:mssql
     ports:
       - mode: host
         target: 1433
