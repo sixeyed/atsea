@@ -9,31 +9,31 @@ INSERT INTO [$(DatabaseName)].[dbo].[Product] (Name, Description, Price, Image)
 GO
 
 INSERT INTO [$(DatabaseName)].[dbo].[Product] (Name, Description, Price, Image) 
- VALUES ('Compose', 'Compose', 25, '/images/Compose.png')
+ VALUES ('Compose', 'Compose', 25, '/images/1.png')
 GO
 
 INSERT INTO [$(DatabaseName)].[dbo].[Product] (Name, Description, Price, Image) 
- VALUES ('Gordon', 'Gordon the Turtle', 25, '/images/gordon.png')
+ VALUES ('Gordon', 'Gordon the Turtle', 25, '/images/2.png')
 GO
 
 INSERT INTO [$(DatabaseName)].[dbo].[Product] (Name, Description, Price, Image) 
- VALUES ('Containerd', 'Containerd for the people', 25, '/images/containerd.png')
+ VALUES ('Containerd', 'Containerd for the people', 25, '/images/3.png')
 GO
 
 INSERT INTO [$(DatabaseName)].[dbo].[Product] (Name, Description, Price, Image) 
- VALUES ('Registry', 'Where to put your containers', 25, '/images/Registry.png')
+ VALUES ('Registry', 'Where to put your containers', 25, '/images/4.png')
 GO
 
 INSERT INTO [$(DatabaseName)].[dbo].[Product] (Name, Description, Price, Image) 
- VALUES ('DockerMachine', 'Working like a well oiled machine', 25, '/images/Docker_machine.png')
+ VALUES ('DockerMachine', 'Working like a well oiled machine', 25, '/images/5.png')
 GO
 
 INSERT INTO [$(DatabaseName)].[dbo].[Product] (Name, Description, Price, Image) 
- VALUES ('Swarm', 'Orchestrating work loads', 25, '/images/swarm.png')
+ VALUES ('Swarm', 'Orchestrating work loads', 25, '/images/6.png')
 GO
 
 INSERT INTO [$(DatabaseName)].[dbo].[Product] (Name, Description, Price, Image) 
- VALUES ('Trusted Registry', 'Keeping it safe and secure', 25, '/images/trusted_registry.jpg')
+ VALUES ('Trusted Registry', 'Keeping it safe and secure', 25, '/images/7.jpg')
 GO
 
 PRINT N'Product data inserted.';
