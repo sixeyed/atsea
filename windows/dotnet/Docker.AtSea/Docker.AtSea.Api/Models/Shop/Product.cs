@@ -1,11 +1,13 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Web;
 
 namespace Docker.AtSea.Api.Models.Shop
 {
+    [Table(name:"Product")]
     public class Product
     {
         [Key]
@@ -23,6 +25,7 @@ namespace Docker.AtSea.Api.Models.Shop
         [StringLength(10485760)]
         public string Description { get; set; }
 
-        public byte[] Image { get; set; }
+        [Required]
+        public string Image { get; set; }
     }
 }

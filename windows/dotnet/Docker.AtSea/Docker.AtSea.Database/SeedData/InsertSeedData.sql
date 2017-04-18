@@ -1,29 +1,39 @@
-﻿
-USE [$(DatabaseName)];
+﻿PRINT N'Inserting product data...';
 
-INSERT INTO Products (Name, Description, Price, Image) 
- SELECT 'Big Moby', 'Moby', 25, BulkColumn FROM OPENROWSET(BULK 'C:\init\SeedData\images\moby_art.png', SINGLE_BLOB) rs;
+INSERT INTO [$(DatabaseName)].[dbo].[Product] (Name, Description, Price, Image) 
+ VALUES ('Big Moby', 'Moby', 25, '/images/moby_art.png')
+GO
 
-INSERT INTO Products (Name, Description, Price, Image) 
- SELECT 'On the dock', 'Working together', 25, BulkColumn FROM OPENROWSET(BULK 'C:\init\SeedData\images\on_the_dock.jpg', SINGLE_BLOB) rs;
+INSERT INTO [$(DatabaseName)].[dbo].[Product] (Name, Description, Price, Image) 
+ VALUES ('On the dock', 'Working together', 25, '/images/on_the_dock.jpg')
+GO
 
-INSERT INTO Products (Name, Description, Price, Image) 
- SELECT 'Compose', 'Compose', 25, BulkColumn FROM OPENROWSET(BULK 'C:\init\SeedData\images\Compose.png', SINGLE_BLOB) rs;
+INSERT INTO [$(DatabaseName)].[dbo].[Product] (Name, Description, Price, Image) 
+ VALUES ('Compose', 'Compose', 25, '/images/Compose.png')
+GO
 
-INSERT INTO Products (Name, Description, Price, Image) 
- SELECT 'Gordon', 'Gordon the Turtle', 25, BulkColumn FROM OPENROWSET(BULK 'C:\init\SeedData\images\gordon.png', SINGLE_BLOB) rs;
+INSERT INTO [$(DatabaseName)].[dbo].[Product] (Name, Description, Price, Image) 
+ VALUES ('Gordon', 'Gordon the Turtle', 25, '/images/gordon.png')
+GO
 
-INSERT INTO Products (Name, Description, Price, Image) 
- SELECT 'Containerd', 'Containerd for the people', 25, BulkColumn FROM OPENROWSET(BULK 'C:\init\SeedData\images\containerd.png', SINGLE_BLOB) rs;
+INSERT INTO [$(DatabaseName)].[dbo].[Product] (Name, Description, Price, Image) 
+ VALUES ('Containerd', 'Containerd for the people', 25, '/images/containerd.png')
+GO
 
-INSERT INTO Products (Name, Description, Price, Image) 
- SELECT 'Registry', 'Where to put your containers', 25, BulkColumn FROM OPENROWSET(BULK 'C:\init\SeedData\images\Registry.png', SINGLE_BLOB) rs;
+INSERT INTO [$(DatabaseName)].[dbo].[Product] (Name, Description, Price, Image) 
+ VALUES ('Registry', 'Where to put your containers', 25, '/images/Registry.png')
+GO
 
-INSERT INTO Products (Name, Description, Price, Image) 
- SELECT 'DockerMachine', 'Working like a well oiled machine', 25, BulkColumn FROM OPENROWSET(BULK 'C:\init\SeedData\images\Docker_machine.png', SINGLE_BLOB) rs;
+INSERT INTO [$(DatabaseName)].[dbo].[Product] (Name, Description, Price, Image) 
+ VALUES ('DockerMachine', 'Working like a well oiled machine', 25, '/images/Docker_machine.png')
+GO
 
-INSERT INTO Products (Name, Description, Price, Image) 
- SELECT 'Swarm', 'Orchestrating work loads', 25, BulkColumn FROM OPENROWSET(BULK 'C:\init\SeedData\images\swarm.png', SINGLE_BLOB) rs;
+INSERT INTO [$(DatabaseName)].[dbo].[Product] (Name, Description, Price, Image) 
+ VALUES ('Swarm', 'Orchestrating work loads', 25, '/images/swarm.png')
+GO
 
-INSERT INTO Products (Name, Description, Price, Image) 
- SELECT 'Trusted Registry', 'Keeping it safe and secure', 25, BulkColumn FROM OPENROWSET(BULK 'C:\init\SeedData\images\trusted_registry.jpg', SINGLE_BLOB) rs;
+INSERT INTO [$(DatabaseName)].[dbo].[Product] (Name, Description, Price, Image) 
+ VALUES ('Trusted Registry', 'Keeping it safe and secure', 25, '/images/trusted_registry.jpg')
+GO
+
+PRINT N'Product data inserted.';

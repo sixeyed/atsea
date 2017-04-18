@@ -2,7 +2,10 @@ version: "3.1"
 
 services:
 
-  atsea-database:
+  atsea-db:
+    build:
+      context: .
+      dockerfile: docker/database/Dockerfile
     image: atsea-db
     ports:
       - "1433:1433"
@@ -10,11 +13,14 @@ services:
       - app-net
 
   atsea-api:
+    build:
+      context: .
+      dockerfile: docker/api/Dockerfile
     image: atsea-api
     ports:
       - "8080:8080" 
     depends_on:
-      - atsea-database
+      - atsea-db
     networks:
       - app-net
 
