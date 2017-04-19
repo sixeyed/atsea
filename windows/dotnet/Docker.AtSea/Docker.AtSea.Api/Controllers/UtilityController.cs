@@ -8,12 +8,11 @@ using System.Web.Http;
 
 namespace Docker.AtSea.Api.Controllers
 {
-    [RoutePrefix("atsea/utility")]
     public class UtilityController : ApiController
     {
         private ApplicationDbContext db = new ApplicationDbContext();
-
-        [Route("containerid")]
+        
+        [Route("utility/containerid")]
         public async Task<IHttpActionResult> GetContainerId()
         {
             var server = new Server
@@ -27,8 +26,8 @@ namespace Docker.AtSea.Api.Controllers
             return Ok(server);
         }
 
-        [Route("healthcheck")]
-        public async Task<IHttpActionResult> GetHealthcheck ()
+        [Route("utility/healthcheck")]
+        public async Task<IHttpActionResult> GetHealthcheck()
         {
             try
             {
