@@ -18,13 +18,12 @@ import org.slf4j.LoggerFactory;
 import java.net.InetAddress;
 import java.net.UnknownHostException;
 
-
 @RestController
 @RequestMapping("/utility/")
 public class UtilityController {
 	
 	public static final Logger logger = LoggerFactory.getLogger(UtilityController.class);
-	
+		
 	@Autowired
 	JdbcTemplate jdbcTemplate;
 
@@ -64,8 +63,5 @@ public class UtilityController {
 			return new ResponseEntity<Object>(new CustomErrorType("Container Id not found."), HttpStatus.NOT_FOUND);
 		}
 		return new ResponseEntity<JSONObject>(containerId, HttpStatus.OK);
-		
 	}
-	
-
 }
